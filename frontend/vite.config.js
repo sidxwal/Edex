@@ -9,4 +9,7 @@ export default defineConfig({
       external: [],
     },
   },
+  optimizeDeps: {
+    include: ["firebase/app", "firebase/auth"], // Explicitly include Firebase modules
+  },
 });
