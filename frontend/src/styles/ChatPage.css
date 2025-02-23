@@ -1,0 +1,653 @@
+/* ChatPage.css */
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #212121;
+  border-bottom: 1px solid #474747;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar h1 {
+  font-size: 22px;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* About the Developer Button */
+.about-dev {
+  background-color: transparent;
+  color: #b2b2b2;
+  border: 1px solid #444;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin-right: 15px;
+}
+
+.about-dev:hover {
+  background-color: #b2b2b2;
+  color: #444;
+  border: 1px solid #b2b2b2;
+}
+
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensures full viewport height */
+  width: 100vw; /* Ensures full viewport width */
+  background-color: #1e1e2f; /* Dark theme */
+  color: white;
+  overflow: hidden;
+}
+
+/* 🔹 Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #292943; /* Dark blue background */
+  border-bottom: 1px solid #444;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-text h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.brand-text p {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.progress-bar {
+  flex: 1;
+  margin: 0 20px;
+  height: 5px;
+  background-color: #333;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* 🔹 Main Layout */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background-color: #2f2f2f;
+  height: calc(100vh - 60px); /* Adjust based on top-bar height */
+}
+
+/* Chat Section (Making it look like a digital screen) */
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: #181818; /* Darker background */
+  border-radius: 20px; /* Rounded edges for a tablet look */
+  margin: 20px; /* Space around */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Soft blue glow*/
+  /* border: 1px solid #00ff26; Adds a sleek digital border */
+  padding: 15px;
+}
+
+/* Chat Box (Inside the "Tablet" screen) */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a; /* Darker background for chat area */
+  border-radius: 15px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* Welcome Message */
+.welcome-message {
+  text-align: center;
+  margin-top: 50px;
+  background-color: #2f2f2f;
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-message h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.topics {
+  margin-top: 15px;
+}
+
+.topics button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.topics button:hover {
+  transform: translateY(-1px);
+  /* border: 2px solid rgba(0, 123, 255, 0.4); Thin border, no blue outline */
+  box-shadow: 0 3px 10px #186105; /* Soft glow effect */
+}
+
+/* Common styles for all chat messages */
+.chat-bubble {
+  display: flex;
+  flex-direction: column; /* Ensure structured text flows properly */
+  max-width: 75%;
+  padding: 5px 16px; /* Balanced padding */
+  margin: 15px 0; /* Space between chat bubbles */
+  border-radius: 20px; /* Rounded corners */
+  word-wrap: break-word;
+  line-height: 1.7; /* Maintain structured line spacing */
+}
+
+/* User (Sender) Message */
+.chat-bubble.user {
+  background-color: #a8a8a8; /* Blue for user messages */
+  color: #111;
+  align-self: flex-end;
+  text-align: left;
+}
+
+/* AI Response Message */
+.chat-bubble.ai {
+  background-color: #363636;
+  color: rgb(228, 228, 228);
+  align-self: flex-start;
+  text-align: left;
+  /* white-space: pre-wrap; */
+}
+
+/* Ensure paragraphs inside chat bubble have correct spacing */
+.chat-bubble p {
+  margin: 4px 0; /* Small margin for spacing */
+}
+
+/* 🔹 Chat Input */
+.chat-input-container {
+  display: flex;
+  padding: 20px;
+  /* border-top: 1px solid #444; */
+  background-color: #1a1a1a;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  background-color: #2f2f2f;
+  color: white;
+}
+
+.send-button {
+  background-color: #2aa607; /* Blue background */
+  border: none;
+  padding: 10px 17px;
+  border-radius: 50%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  cursor: pointer;
+  margin-left: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #008f00; /* Darker blue on hover */
+}
+
+.send-icon {
+  color: white;
+  font-size: 18px;
+}
+
+/* Improving Sidebar Look */
+.sidebar {
+  width: 320px; /* Slightly wider */
+  background: #212121; /* Gradient effect */
+  padding: 20px;
+  border-left: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+}
+
+/* User Profile Section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  background: #323232;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Green Box Around Icon */
+.user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #008f00;
+  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+}
+
+/* Profile Icon Inside Green Box */
+.profile-icon {
+  font-size: 26px;
+  color: white;
+}
+
+/* User Info */
+.user-info {
+  margin-left: 12px;
+  margin-top: 10px;
+}
+
+.user-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.user-status {
+  font-size: 13px;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Icon Next to Status */
+.status-icon {
+  font-size: 14px;
+  color: #f1c40f; /* Gold color for the graduation cap */
+}
+
+.learning-hours {
+  font-size: 13px;
+  color: #2f81f7;
+}
+
+.new-chat {
+  border-top: 1px solid #444;
+  padding: 13px 0;
+}
+
+/* New Chat Button */
+.new-chat-button {
+  width: 100%;
+  padding: 12px;
+  background: #323232;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.new-chat-button:hover {
+  background: #5e5e5e;
+}
+
+.new-chat-button i {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+/* Sidebar Headers */
+.sidebar h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Previous Chats */
+.chat-sessions {
+  list-style: none;
+  padding: 0 5px 0 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+/* Sidebar Previous Chats */
+.chat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  transition: background 0.3s;
+}
+
+.chat-item:hover {
+  background: #3e3e3e;
+}
+
+.chat-button {
+  flex: 1;
+  text-align: left;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #ff7878; /* Red color for delete */
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  color: #ff1a1a; /* Darker red on hover */
+}
+
+/* End Session Button */
+.end-session {
+  margin-top: auto;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #212121;
+  color: white;
+  border: none;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 1s;
+  transition: background 0.5s;
+  border-radius: 8px;
+}
+
+.end-session i {
+  margin-right: 6px;
+}
+
+.end-session:hover {
+  color: #ff7878;
+  background-color: #2b2b2b;
+}
+
+.user-greeting {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Custom scrollbar for chat section */
+.chat-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 10px;
+}
+
+.chat-sessions::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-sessions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-sessions::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 10px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.loading-dots::after {
+  content: " ...";
+  animation: blink 1.9s infinite;
+  background-color: none;
+}
+
+.chat-bubble.ai.thinking {
+  background-color: transparent !important; /* Remove background color */
+  box-shadow: none !important; /* Remove shadow if any */
+  padding: 0 !important; /* Adjust padding */
+  font-style: italic; /* Italicize the text */
+  color: #666; /* Make the text slightly lighter */
+}
+
+/* MOBILE RESPONSIVE STYLES for ChatPage */
+@media (max-width: 768px) {
+  /* Make main-content stack vertically */
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Adjust chat section: reduce margins and height */
+  .chat-section {
+    margin: 10px;
+    border-radius: 15px;
+    height: 97%;
+    flex: none;
+  }
+
+  /* Limit chat box height on mobile */
+  .chat-box {
+    /* max-height: 50vh; Adjust as needed */
+    padding: 10px;
+  }
+
+  .welcome-message {
+    width: 99%;
+  }
+
+  /* Chat input adjustments */
+  .chat-input-container {
+    padding: 10px;
+  }
+
+  .chat-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .send-button {
+    padding: 8px 14px;
+    margin-left: 10px;
+  }
+
+  /* Reduce sidebar element sizes */
+  .user-profile {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+
+  .new-chat-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chat-sessions {
+    /* max-height: 800px; */
+    max-height: 70%;
+  }
+
+  .end-session {
+    /* margin-bottom: 50px; */
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #b2b2b2;
+    border: 1px solid #444;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+
+  .end-session:hover {
+    color: #ff7878;
+    background-color: #2b2b2b;
+  }
+
+  /* Hide the hamburger button on desktop (it will be shown only on mobile) */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* Hide the About button on mobile if you want to */
+  .navbar-right .about-dev {
+    display: none;
+  }
+
+  /* Make the main-content full width on mobile */
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px; /* Push off-screen */
+    width: 320px;
+    height: 100%;
+    background: #212121;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    margin-top: 56px;
+  }
+
+  /* Show sidebar when it's open */
+  .sidebar.open {
+    right: 0;
+  }
+
+  /* Sidebar Toggle Button (Always Above Everything) */
+  .sidebar-toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100; /* Ensures it stays above everything */
+    display: block;
+  }
+
+  .sidebar-toggle-icon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    z-index: 1002; /* Ensures it's above everything */
+    cursor: pointer;
+    display: none; /* Hide by default */
+  }
+
+  /* Make sure the icon is visible when sidebar is open */
+  .sidebar.open .sidebar-toggle-btn {
+    color: white;
+  }
+
+  /* Hide the sidebar toggle button on desktop */
+  @media (min-width: 769px) {
+    .sidebar-toggle-btn {
+      display: none;
+    }
+  }
+
+  /* Optionally adjust main-content to prevent overlap */
+  .chat-section {
+    margin: 10px;
+  }
+}
+
+/* Show Sidebar Icon Only on Mobile */
+@media (max-width: 768px) {
+  .sidebar-toggle-icon {
+    display: block;
+  }
+}

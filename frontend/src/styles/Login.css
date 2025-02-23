@@ -1,0 +1,177 @@
+/* Apply Inter font */
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fullscreen Layout */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: #1e1e1e;
+  color: white;
+  padding: 10px;
+}
+
+/* Login Box */
+.login-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff0d;
+  padding: 35px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  width: 55%;
+  height: 55%;
+}
+
+/* Left Section - Text & Login */
+.left-section {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.left-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+.left-section p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Google Login Button */
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  background: #2aa607;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px #2aa6074d;
+  border: none;
+  cursor: pointer;
+}
+
+.google-login-btn:hover {
+  background-color: #008f00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  transform: scale(1.05);
+}
+
+/* Back to Home Button */
+.back-to-home-btn {
+  display: block;
+  padding: 5px 15px;
+  background: #2F2F2F;
+  color: white;
+  font-size: 13px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  margin-top: 25px;
+  width: 33%;
+}
+
+.back-to-home-btn:hover {
+  background-color: #444;
+}
+
+/* Right Section - Illustration for Desktop */
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+/* Illustration common styles */
+.illustration {
+  width: 100%;
+  max-width: 300px;
+  animation: float 4s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .login-box {
+    flex-direction: column; /* Stack sections vertically */
+    text-align: center;
+    padding: 30px;
+    height: auto; /* Adjust height based on content */
+    width: 90%;
+  }
+  
+  .left-section {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .left-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .left-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .google-login-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .back-to-home-btn {
+    width: 100%;
+  }
+  
+  /* Hide desktop right section on mobile */
+  .right-section {
+    display: none;
+  }
+  
+  /* Show mobile illustration between header and paragraph */
+  .mobile-illustration {
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  .mobile-illustration .illustration {
+    max-width: 200px; /* Smaller image on mobile */
+  }
+}
+
+/* Ensure mobile-illustration is hidden on desktop */
+@media (min-width: 769px) {
+  .mobile-illustration {
+    display: none;
+  }
+}
